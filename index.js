@@ -11,3 +11,5 @@ app.use(express.json())
 app.use("/api", apiRouter)
 mongoose.connect(process.env.DB_URL).then(() => console.log("connected to db")).catch(err => console.log(err))
 app.listen(port, () => console.log(`app listening on port ${port}!`))
+
+

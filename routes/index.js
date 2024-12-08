@@ -4,6 +4,6 @@ const userRouter = require('./user')
 const apiRouter = express.Router()
 
 apiRouter.use("/blogs", blogRouter)
-apiRouter.use("/users", userRouter)
+apiRouter.use("/user", userRouter)
 
 module.exports = apiRouter
