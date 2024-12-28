@@ -39,7 +39,7 @@ const getAllblogs = async (req, res) => {
             })
         }
         const skip = (page - 1) * limit
-        const query = tag ? { tags: { $in: [tag] } } : {};
+        const query = tag ? { tags: { $in: [new RegExp(tag, 'i')] } } : {};
         const totalBlogs = await BlogPost.where(query).countDocuments()
         const totalPage = Math.ceil(totalBlogs / limit)
         const result = await BlogPost.find(query).skip(skip).limit(limit).sort({ createdAt: -1 })
